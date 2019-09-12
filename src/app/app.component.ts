@@ -1,3 +1,4 @@
+import { MoviePage } from './../pages/movie/movie';
 import { JsonMenuPage } from './../pages/json-menu/json-menu';
 import { ScannerPage } from './../pages/scanner/scanner';
 import { Component, ViewChild } from '@angular/core';
@@ -32,6 +33,7 @@ export class MyApp {
       { title: 'Scanner', component: ScannerPage, icon: 'barcode'},
       { title: 'Flashlight', component: FlashlightPage, icon: 'flash'},
       { title: 'JsonMenu', component: JsonMenuPage, icon: 'copy'},
+      { title: 'Movie App', component: MoviePage, icon: 'radio'},
     ];
 
   }

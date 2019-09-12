@@ -1,3 +1,4 @@
+import { MoviePage } from './../pages/movie/movie';
 import {HttpClientModule} from '@angular/common/http';
 import { JsonMenuPage } from './../pages/json-menu/json-menu';
 import { Flashlight } from '@ionic-native/flashlight';
@@ -21,7 +22,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   declarations: [
     MyApp,
     HomePage,
-    ListPage,LoginPage,ScannerPage,FlashlightPage,JsonMenuPage
+    ListPage,LoginPage,ScannerPage,FlashlightPage,JsonMenuPage,MoviePage
   ],
   imports: [
     BrowserModule,
@@ -32,11 +33,11 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,LoginPage,ScannerPage,FlashlightPage,JsonMenuPage
+    ListPage,LoginPage,ScannerPage,FlashlightPage,JsonMenuPage,MoviePage
   ],
   providers: [
     StatusBar,
-    SplashScreen, SMS,BarcodeScanner,Flashlight,JsonMenuPage,
+    SplashScreen, SMS,BarcodeScanner,Flashlight,JsonMenuPage,MoviePage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
