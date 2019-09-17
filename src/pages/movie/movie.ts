@@ -22,4 +22,20 @@ export class MoviePage {
     console.log('ionViewDidLoad MoviePage');
   }
 
+  GoToNow(){
+    this.navCtrl.push("NowPlayingPage");
+  }
+
+  GoToUpcoming(){
+    this.navCtrl.push("UpcomingPage");
+  }
+
+  GoToPopular(){
+    this.navCtrl.push("PopularPage");
+  }
+
+  GoToTopRated(){
+    this.navCtrl.push("TopRatedPage");
+  }
+
 }

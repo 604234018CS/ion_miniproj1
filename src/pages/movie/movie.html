@@ -6,59 +6,70 @@
 -->
 <ion-header>
   <ion-navbar>
-      <button ion-button menuToggle >
-          <ion-icon name="list-box"></ion-icon> 
-          
-        </button>
-    <ion-title text-center>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Movie App &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ion-icon name="contact"></ion-icon> </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="list-box"></ion-icon>
+    </button>
+    <ion-title text-center>Movie App</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="contact"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+  <ion-card color="dark">
+    <ion-card-header>
+      All About Movie
+    </ion-card-header>
+  </ion-card>
     
-          <button ion-button color="dark" >All About Movie</button>
-        
-          <ion-list>
-              <ion-item>
-                <ion-thumbnail item-start>
-                  <img src="assets/imgs/1.jpg">
-                </ion-thumbnail>
-                <h2> Now </h2>
-                <p>Now Playing  </p>
-                <ion-icon item-right name="arrow-dropright"></ion-icon>
-            </ion-item>
-            </ion-list>
+  <ion-list>
+    <ion-item block (click)="GoToNow()">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/1.jpg">
+      </ion-thumbnail>
+      <h2> Now </h2>
+      <p>Now Playing </p>
+      <ion-icon item-right name="arrow-dropright"></ion-icon>
+    </ion-item>
+  </ion-list>
 
-            <ion-list>
-              <ion-item>
-                <ion-thumbnail item-start>
-                  <img src="assets/imgs/2.jpg">
-                </ion-thumbnail>
-                <h2> Upcoming </h2>
-                <p> Upcoming Movie</p>
-                <ion-icon item-right name="arrow-dropright"></ion-icon>
-            </ion-item>
-            </ion-list>
+  <ion-list>
+    <ion-item block (click)="GoToUpcoming()">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/2.jpg">
+      </ion-thumbnail>
+      <h2> Upcoming </h2>
+      <p> Upcoming Movie</p>
+      <ion-icon item-right name="arrow-dropright"></ion-icon>
+    </ion-item>
+  </ion-list>
 
-            <ion-list>
-              <ion-item>
-                <ion-thumbnail item-start>
-                  <img src="assets/imgs/3.png">
-                </ion-thumbnail>
-                <h2> Popular </h2>
-                <p> Popular Movie </p> 
-                <ion-icon item-right name="arrow-dropright"></ion-icon>
-            </ion-item>
-            </ion-list>
+  <ion-list>
+    <ion-item block (click)="GoToPopular()">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/3.png">
+      </ion-thumbnail>
+      <h2> Popular </h2>
+      <p> Popular Movie </p>
+      <ion-icon item-right name="arrow-dropright"></ion-icon>
+    </ion-item>
+  </ion-list>
 
-            <ion-list>
-              <ion-item>
-                <ion-thumbnail item-start>
-                  <img src="assets/imgs/4.png">
-                </ion-thumbnail>
-                <h2> Top Rated </h2>
-                <p> Top Rated  </p>
-                <ion-icon item-right name="arrow-dropright"></ion-icon>
-            </ion-item>
-            </ion-list>
+  <ion-list>
+    <ion-item block (click)="GoToTopRated()">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/4.png">
+      </ion-thumbnail>
+      <h2> Top Rated </h2>
+      <p> Top Rated </p>
+      <ion-icon item-right name="arrow-dropright"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+
 </ion-content>
+\\end class
