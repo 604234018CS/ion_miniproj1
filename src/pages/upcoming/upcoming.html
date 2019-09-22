@@ -6,15 +6,22 @@
 -->
 <ion-header>
     <ion-navbar>
-      <ion-title text-center> Upcoming </ion-title>
-      <ion-buttons end>
-        <button ion-button icon-only>
-          <ion-icon name="home"></ion-icon>
-        </button>
-      </ion-buttons>
+      <ion-title text-center>Upcoming</ion-title>
+      <button ion-button icon-only ion-button menuToggle>
+        <ion-icon name="logo-windows"></ion-icon>
+      </button>
     </ion-navbar>
   </ion-header>
-
 <ion-content padding>
-
+    <ion-searchbar></ion-searchbar>
+    
+    <ion-item *ngFor="let upcomingmovie of moviesArray" 
+    (click)="Moviedetail(upcomingmovie)">
+      <div item-left>
+          <img src="{{imgPath + upcomingmovie.poster_path}}" style="display: block; width: 90px; height: 120px;">
+      </div>
+      <h2>{{upcomingmovie.title}}</h2>
+      <p>Release:{{upcomingmovie.release_date}}</p>
+  </ion-item>
+    
 </ion-content>

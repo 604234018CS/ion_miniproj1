@@ -7,14 +7,22 @@
 <ion-header>
     <ion-navbar>
       <ion-title text-center> Top Rated </ion-title>
-      <ion-buttons end>
-        <button ion-button icon-only>
-          <ion-icon name="home"></ion-icon>
-        </button>
-      </ion-buttons>
+      <button ion-button icon-only ion-button menuToggle>
+        <ion-icon name="home"></ion-icon>
+      </button>
     </ion-navbar>
   </ion-header>
 
 <ion-content padding>
+    <ion-searchbar></ion-searchbar>
+    
+    <ion-item *ngFor="let topratedmoive of moviesArray" 
+    (click)="Moviedetail(topratedmoive)">
+      <div item-left>
+          <img src="{{imgPath + topratedmoive.poster_path}}" style="display: block; width: 90px; height: 120px;">
+      </div>
+      <h2>{{topratedmoive.title}}</h2>
+      <p>Release:{{topratedmoive.release_date}}</p>
+  </ion-item>
 
 </ion-content>

@@ -7,14 +7,21 @@
 <ion-header>
     <ion-navbar>
       <ion-title text-center> Popular </ion-title>
-      <ion-buttons end>
-        <button ion-button icon-only>
-          <ion-icon name="home"></ion-icon>
-        </button>
-      </ion-buttons>
+  <button ion-button icon-only ion-button menuToggle>
+  <ion-icon name="logo-windows"></ion-icon>
+  </button>
     </ion-navbar>
   </ion-header>
 
 <ion-content padding>
-
+    <ion-searchbar></ion-searchbar>
+    
+    <ion-item *ngFor="let popularmovie of moviesArray" 
+    (click)="Moviedetail(popularmovie )">
+      <div item-left>
+          <img src="{{imgPath + popularmovie .poster_path}}" style="display: block; width: 90px; height: 120px;">
+      </div>
+      <h2>{{popularmovie .title}}</h2>
+      <p>Release:{{popularmovie .release_date}}</p>
+  </ion-item>
 </ion-content>

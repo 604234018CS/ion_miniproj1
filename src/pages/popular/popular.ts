@@ -1,3 +1,4 @@
+import { MovieProvider } from './../../providers/movie/movie';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -15,11 +16,24 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PopularPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  moviesArray: any = [];
+  imgPath = 'https://image.tmdb.org/t/p/original/';
+
+  constructor(public navCtrl: NavController, public navParams: NavParams,public popularmovie: MovieProvider) {
+    this.loadnowdata();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PopularPage');
+  }
+  loadnowdata(){
+    this.popularmovie.getPopularmovie().subscribe(nowmovies =>{
+    this.moviesArray=nowmovies['results'];
+    });
+
+  }
+  Moviedetail(popularmovie){
+  this.navCtrl.push("MoviedetailPage",popularmovie);
   }
 
 }

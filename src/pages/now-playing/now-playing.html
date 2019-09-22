@@ -6,16 +6,24 @@
 -->
 <ion-header>
     <ion-navbar>
-      
       <ion-title text-center>Now Playing </ion-title>
-      <ion-buttons end>
-        <button ion-button icon-only>
-          <ion-icon name="home"></ion-icon>
-        </button>
-      </ion-buttons>
+<button ion-button icon-only ion-button menuToggle>
+  <ion-icon name="logo-windows"></ion-icon>
+</button>
     </ion-navbar>
   </ion-header>
 
 <ion-content padding>
+    <ion-searchbar></ion-searchbar>
+    
+    <ion-item *ngFor="let nowmovie of moviesArray" 
+    (click)="Moviedetail(nowmovie)">
+      <div item-left>
+          <img src="{{imgPath + nowmovie.poster_path}}" style="display: block; width: 90px; height: 120px;">
+      </div>
+      <h2>{{nowmovie.title}}</h2>
+      <p>Release:{{nowmovie.release_date}}</p>
+  </ion-item>
+
 
 </ion-content>
