@@ -33,5 +33,8 @@ export class MovieProvider {
     const url = this.baseURL + 'movie/popular?' + this.apiKey;
     return this.http.get(url);
   }
+  searchMovie(query) {
+    const url = this.baseURL + 'search/movie?query=' + query + '&' + this.apiKey;
+    return this.http.get(url);
+  }
 }
-  

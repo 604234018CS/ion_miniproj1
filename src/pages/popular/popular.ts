@@ -35,5 +35,14 @@ export class PopularPage {
   Moviedetail(popularmovie){
   this.navCtrl.push("MoviedetailPage",popularmovie);
   }
-
+  onEvent(ev: any) {
+    let val = ev.target.value;
+    if(val.length !== 0){
+      this.popularmovie.searchMovie(val).subscribe(upmovies => {
+        this.moviesArray = upmovies['results'];
+      });
+    } else {
+      this.loadnowdata();
+    }
+  }
 }

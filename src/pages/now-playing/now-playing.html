@@ -14,7 +14,7 @@
   </ion-header>
 
 <ion-content padding>
-    <ion-searchbar></ion-searchbar>
+  <ion-searchbar (ionInput)="onEvent($event)"></ion-searchbar>
     
     <ion-item *ngFor="let nowmovie of moviesArray" 
     (click)="Moviedetail(nowmovie)">
