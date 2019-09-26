@@ -5,13 +5,15 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-navbar>
-      <ion-title text-center>Now Playing </ion-title>
-<button ion-button icon-only ion-button menuToggle>
-  <ion-icon name="logo-windows"></ion-icon>
-</button>
-    </ion-navbar>
-  </ion-header>
+  <ion-navbar>
+      <ion-title text-center> Now Playing </ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only>
+            <ion-icon name="home"></ion-icon>
+          </button>
+        </ion-buttons>
+  </ion-navbar>
+</ion-header>
 
 <ion-content padding>
   <ion-searchbar (ionInput)="onEvent($event)"></ion-searchbar>
