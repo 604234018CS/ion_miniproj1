@@ -50,11 +50,14 @@ export class MoviedetailPage {
     .catch((reason: any) => console.log(reason));
   }
 
-    shareFacebook(){
-      let title = this.moviedata.title;
-      let overview = this.moviedata.overview;
-      let numberphone = "0888342938";
-      this.socialSharing.shareViaSMS('Moive title'+title+':'+overview,numberphone);
+    shareFacebook(movie){
+      this.socialSharing.shareViaFacebook(movie.overview,movie.poster_path)
+      .then(() =>{
+        console.log("Message sent");
+        this.moviedata = this.navParams.data;
+      }).catch((error) =>{
+        console.log("Fail posting");
+      })
     }
     
 
