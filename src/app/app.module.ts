@@ -18,6 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginPage } from '../pages/login/login';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { MovieProvider } from '../providers/movie/movie';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @NgModule({
   declarations: [
@@ -34,11 +36,23 @@ import { MovieProvider } from '../providers/movie/movie';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage,LoginPage,ScannerPage,FlashlightPage,JsonMenuPage,MoviePage
+    ListPage,
+    LoginPage,
+    ScannerPage,
+    FlashlightPage,
+    JsonMenuPage,
+    MoviePage
   ],
   providers: [
     StatusBar,
-    SplashScreen, SMS,BarcodeScanner,Flashlight,JsonMenuPage,MoviePage,
+    SplashScreen, 
+    SMS,
+    BarcodeScanner,
+    Flashlight,
+    JsonMenuPage,
+    MoviePage,
+    TextToSpeech,
+    SocialSharing,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MovieProvider
   ]

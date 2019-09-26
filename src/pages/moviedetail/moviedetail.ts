@@ -1,6 +1,10 @@
 import { MovieProvider } from './../../providers/movie/movie';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TextToSpeech } from '@ionic-native/text-to-speech';
+import { SocialSharing } from '@ionic-native/social-sharing';
+
+
 
 /**
  * Generated class for the MoviedetailPage page.
@@ -28,7 +32,7 @@ export class MoviedetailPage {
   revenue: any;
   imgPath = 'https://image.tmdb.org/t/p/original/';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public moviedetail: MovieProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public moviedetail: MovieProvider,private tts: TextToSpeech,private socialSharing:SocialSharing) {
   }
 
   ionViewDidLoad() {
@@ -39,5 +43,19 @@ export class MoviedetailPage {
   openVideo(key){
     this.navCtrl.push("VideoPage",key);
 }
+  talk(textOrOptions){
+    console.log(textOrOptions);
+    this.status.speak(textOrOptions)
+    .then(() => console.log('Success'))
+    .catch((reason: any) => console.log(reason));
+  }
+
+    shareFacebook(){
+      let title = this.moviedata.title;
+      let overview = this.moviedata.overview;
+      let numberphone = "0888342938";
+      this.socialSharing.shareViaSMS('Moive title'+title+':'+overview,numberphone);
+    }
+    
 
 }

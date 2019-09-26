@@ -11,14 +11,28 @@
 </ion-header>
 
 <ion-content padding>
+
     <ion-item ><ion-avatar item-left>
                 <img src="{{imgPath + detail.poster_path}}">
             </ion-avatar>{{detail.title}}</ion-item>
       
     <div><img src="{{imgPath + detail.poster_path}}"></div>
     
-    <button ion-button block icon-lef color="light"  (click)="openVideo(detail.id)" >Video Trailler</button>
-    <button ion-button block icon-lef color="light"  (click)="talk(detail.overview)" >textOrOptions</button>
+    <button ion-button block icon-lef color="secondary"  (click)="openVideo(detail.id)" >Video Trailler</button>
+    <button ion-button block icon-lef color="danger"  (click)="talk(detail.overview)" >textOrOptions</button>
+
+            
+ <ion-fab right bottom>
+  <button ion-fab color="danger"><ion-icon name="arrow-dropleft"></ion-icon></button>
+  <ion-fab-list side="left">
+    <button ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+    <button ion-fab><ion-icon name="logo-instagram"></ion-icon></button>
+    <button ion-fab><ion-icon name="logo-twitter"></ion-icon></button>
+  </ion-fab-list>
+</ion-fab>
+  
+
+
       <h2>Release Date</h2>
       <p>{{detail.release_date}}</p>
       <h2>Vote Average</h2>
@@ -26,4 +40,5 @@
       <h2>Overview</h2>
       <p>{{detail.overview}}</p>  
 
+    
 </ion-content>

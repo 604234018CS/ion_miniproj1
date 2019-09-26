@@ -12,14 +12,16 @@
 
 <ion-content padding>
 
-  <div class =" video-wrapper">
-    <ion-label class ="section-title">Video</ion-label>
-    <ion-list class="videos-list">
-  <ion-item *ngFor="let video of videos" (click)="openVideo(video.key)" class="youtube-video-cell">
-    <ion-icon name="videocam" item-start ></ion-icon>
-    {{video.name}}
-  </ion-item>
-</ion-list>
-</div>
-
+  <ion-list *ngIf="videos.length != 0">
+    <ion-item *ngFor="let video of videos" class="item item-trns">
+       <div class="title">
+           {{video.title}}
+           <div class="video-container">
+               <iframe [src]="openVideo(video.key)" frameborder="0"></iframe>
+           </div>
+           <ion-icon name="videocam" item-start> {{video.name}}</ion-icon>
+          </div>
+    </ion-item>
+  </ion-list>
+  
 </ion-content>

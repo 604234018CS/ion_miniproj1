@@ -1,6 +1,7 @@
 import { MovieProvider } from './../../providers/movie/movie';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {SafeResourceUrl, DomSanitizer} from '@angular/platform-browser';
 
 /**
  * Generated class for the VideoPage page.
@@ -21,7 +22,7 @@ export class VideoPage {
   movie:any;
   url = 'https://www.youtube.com/watch?v=';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private movieAPi: MovieProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private movieAPi: MovieProvider,public sanitizer: DomSanitizer) {
   }
 
   ionViewDidLoad() {
@@ -33,8 +34,9 @@ export class VideoPage {
      console.log(this.videos);
     });
 }
-openVideo(keyOpen){
-  //his.youtube.openVideo(keyOpen);
-  window.open('https://www.youtube.com/watch?v='+keyOpen);
- }
+openVideo(keyOpen:string){
+  let dangerousVideoUrl = 'https://www.youtube.com/embed/' + keyOpen + '?rel=0&showinfo=0';
+ //this.youtube.openVideo(keyOpen);
+ return this.sanitizer.bypassSecurityTrustResourceUrl(dangerousVideoUrl);
+}
 }
