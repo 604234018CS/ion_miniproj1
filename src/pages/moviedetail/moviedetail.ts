@@ -50,14 +50,10 @@ export class MoviedetailPage {
     .catch((reason: any) => console.log(reason));
   }
 
-    shareFacebook(movie){
-      this.socialSharing.shareViaFacebook(movie.overview,movie.poster_path)
-      .then(() =>{
-        console.log("Message sent");
-        this.moviedata = this.navParams.data;
-      }).catch((error) =>{
-        console.log("Fail posting");
-      })
+  shareFacebook(movie){
+    let title = this.detail.title;
+    let overview = this.detail.overview;
+    this.socialSharing.shareViaFacebook('Movie.title' +title+':'+overview);
     }
     
 
